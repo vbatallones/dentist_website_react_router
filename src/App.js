@@ -11,6 +11,9 @@ import {
 import Home from './Home';
 import Procedures from './Procedures';
 import Contact from './Contact'
+import WidgetShow from './WidgetShow';
+
+
 function App() {
   const procedures = [
     'Deep Cleaning',
@@ -40,7 +43,7 @@ function App() {
         {/* the render method will let you use the array we did to pass all the items into the Procedures page */}
         <Route path="/procedures" render={() => <Procedures procedures={procedures} />} />
         <Route path="/contact" component={Contact} />
-
+        <Route path="/widgets/:id"  render={(props) => <WidgetShow procedures={procedures} {...props}/>} />
       </div>
     </Router>
   )
